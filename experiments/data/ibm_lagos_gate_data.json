@@ -1,0 +1,184 @@
+[
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4895487953.401369,
+        "qubit": 0,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.29967585859415413,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4756411467.339814,
+        "qubit": 1,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.2274379553243082,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4846371106.737422,
+        "qubit": 2,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.22800423663305455,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4642170194.505768,
+        "qubit": 3,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.29614192557160124,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4946107002.424039,
+        "qubit": 4,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.23783982799707118,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4835306370.76857,
+        "qubit": 5,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.27515245177686165,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X12",
+        "pulse_shape": "Gaussian",
+        "freq": 4721141149.213349,
+        "qubit": 6,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.2854308367049374,
+            "sigma": 40,
+            "name": "x12_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4505424076.280367,
+        "qubit": 0,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.35106137517072855,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4363911199.382482,
+        "qubit": 1,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.302481969721365,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4455809468.03815,
+        "qubit": 2,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.2505693653856829,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4236991764.4437647,
+        "qubit": 3,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.4972114018308933,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4556187861.468766,
+        "qubit": 4,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.23650320025559493,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4444746487.013791,
+        "qubit": 5,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.3754169534836545,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    },
+    {
+        "name": "parametric_pulse",
+        "label": "X23",
+        "pulse_shape": "Gaussian",
+        "freq": 4328822624.17837,
+        "qubit": 6,
+        "parameters": {
+            "duration": 160,
+            "amp": 0.4354514015415428,
+            "sigma": 40,
+            "name": "x23_pulse"
+        }
+    }
+]
