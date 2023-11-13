@@ -5,12 +5,11 @@ Higher-Energy State Attacks.
 
 ## Abstract
 
-This paper first propose to use higher-energy state to attack quantum computers. This work shows that common reset protocols are ineffective in resetting a qubit from a higher-energy
+This paper first proposes to use the higher-energy states to attack quantum computers. This work shows that common reset protocols are ineffective in resetting a qubit from a higher-energy
 state. To provide a defense, this work proposes a new Cascading Secure Reset (CSR) operation. CSR, without hardware modifications, is able to efficiently and reliably reset higher-energy states back to
 |0⟩. CSR achieves a reduction in |3⟩-initialized state leakage channel capacity by between 1 and 2 orders of magnitude, and does so with a 25x speedup compared with the default decoherence reset.
 
 In the artifact evaluation, we provide source code and experiments corroborating the claims made in this paper.
-
 
 ## Description & Requirements
 
@@ -57,6 +56,12 @@ Besides, the directory `utils` contains helper functions to shorten the code and
 
 The access to IBM Quantum is required. One can register at [IBM Quantum Platform](https://quantum-computing.ibm.com/).
 
+To setup the Qiskit account, visit the IBM Quantum Account web page and copy the account API token at: [IBM Quantum Account](https://quantum-computing.ibm.com/account). Replace `MY_API_TOKEN` below with it and execute the following code snippet:
+```python
+   from qiskit import IBMQ
+   IBMQ.save_account('MY_API_TOKEN')
+```
+
 We provide a quick load function to access the provider. To set up, create a JSON file `provider.json` containing the credential information under the path `experiments`. For example, in the Linux system, this can be done with the command (starting from the root):
 ```bash
 touch experiments/provider.json
@@ -65,11 +70,9 @@ touch experiments/provider.json
 Inside the file, include the access information. One example:
 ```json
 {
-    "ibm_quantum": {
-        "hub": "ibm-q", 
-        "group": "open", 
-        "project": "main"
-    }
+   "hub": "ibm-q", 
+   "group": "open", 
+   "project": "main"
 }
 ```
 
