@@ -45,9 +45,9 @@ Python is the main programming language for this paper. We recommend creating a 
 First, install the dependencies with the command:
 
 ```bash
-pip install qiskit qiskit[visualization] qiskit-ibmq-provider qiskit-aer matplotlib ipykernel
+pip install qiskit qiskit[visualization] qiskit-ibmq-provider qiskit-aer pandas matplotlib plotly seaborn ipykernel
 ```
-These modules are `qiskit`, `qiskit[visualization]`, `qiskit-ibmq-provider`, `qiskit-aer`, which are the quantum computing software development kit we used in this paper. For more information, please see [Qiskit Official Website](https://qiskit.org/). Other modules are `matplotlib` and `seaborn` for figure plotting, and `ipykernel` for the Jupyter Notebook running.
+These modules are `qiskit`, `qiskit[visualization]`, `qiskit-ibmq-provider`, `qiskit-aer`, which are the quantum computing software development kit we used in this paper. For more information, please see [Qiskit Official Website](https://qiskit.org/). Other modules are `pandas` for data manipulation, `matplotlib`, `plotly` and `seaborn` for figure plotting, and `ipykernel` for the Jupyter Notebook running.
 
 Besides, the directory `utils` contains helper functions to shorten the code and speed up the process for the experiments.
 
@@ -83,13 +83,14 @@ Due to the fast updates of the needed Python modules, the code may not be succes
 
 | Name      | Version |
 | ----------- | ----------- |
-matplotlib   |             3.8.0
-numpy        |             1.23.5
-python        |            3.9.18
-qiskit         |           0.44.2
-qiskit-aer      |          0.12.2
-qiskit-ibmq-provider  |    0.20.2
-qiskit-terra          |    0.25.2.1
+|matplotlib   |             3.8.0|
+|numpy        |             1.23.5|
+|pandas | 1.4.3 |
+|python        |            3.9.18|
+|qiskit         |           0.44.2|
+|qiskit-aer      |          0.12.2|
+|qiskit-ibmq-provider  |    0.20.2|
+|qiskit-terra          |    0.25.2.1|
 
 Additionally, quantum computers on IBM Quantum may retire in the future. On different quantum computers, the results may be different. However, this does not hurt the main claims in the paper. This paper mainly used `ibm_lagos` to perform the experiments, which is announced to be retired on November 28, 2023.
 
@@ -111,7 +112,7 @@ The experiments done in this paper are presented under the directory `experiment
 The experiments can be reproduced by executing the Jupyter Notebooks under the directory `experiments`. The estimated human-time is the time of running the Jupyter notebooks and thus is negligible. The estimated compute-time for personal machines is also negligible. Below, we list the approximated compute-hour for the current quantum computer, specifically, `ibm_lagos` that used in this paper. For each experiment, we posted the raw data in the paper under the directory `data` of each experiment directory for reference, and we also provide the calibration data for pulses under the directory `experiments/data`. The experiments include:
 
 1. `0-calibration` [1 compute-hour]:
-    This directory contains the code to obtain the calibration data for $\pi$ pulse.
+   This directory contains the code to obtain the calibration data for $\pi$ pulse.
    1. `calibration.ipynb`: Figure 4, which shows the calibration data for $\pi$ pulse.
 
 2. `1-basis_gate_and_decoherence` [1 compute-hour]: This directory contains the code for the basis gate tomography and the decoherence pattern of higher-energy states.
@@ -119,7 +120,8 @@ The experiments can be reproduced by executing the Jupyter Notebooks under the d
    2. `delay.ipynb`: Figure 5, which shows the higher-energy states decoherence patterns on the IQ plane. Figure 7, which shows the decoherence behavior of different states.
    3. `reset.ipynb`: Figure 6, which shows the influence of the normal reset and CSR on different states.
 
-3. `2-state_leakage` [3 compute-hours]: This directory contains the code to evaluate state leakage and Shannon capacity of the covert channel with different reset mechanisms and delay times.
+3. `2-state_leakage` [6 compute-hours]: This directory contains the code to evaluate state leakage and Shannon capacity of the covert channel with different reset mechanisms and delay times.
+    1. `state_leakage.ipynb`: Figure 9, which displays the state leakage of various reset protocols as a function of end-to-end delay; Figure 10, which examines the worst-case Shannon capacity across the state leakage covert channel of various protocols as a function of end-to-end delay. The notebook utilizes experiment data stored in the `data` subdirectory and exports PDF and interactive HTML figures to the `figures` subdirectory. The relevant data directly informs Table 3.
 
 4. `3-attack_on_quantum_algorithms` [3 compute-hours]: This directory contains the code for the attack on four quantum algorithms: Deutsch-Jozsa, inverse quantum Fourier transformation, Grover's search, and variational quantum eigensolver (VQE).
    1. `vqe`: (Due to the IBM Quantum architecture update, this may be disabled temporarily for the custom program, so this may not be successfully executed) This directory contains the code for creating the custom VQE program, and the code to generate Figure 13, which shows the optimization process of VQE with different input states.
