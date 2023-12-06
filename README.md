@@ -132,7 +132,11 @@ We provide all necessary code and experiments to generate the data and figures p
 
 The experiments done in this paper are presented under the directory `experiments`. The authors did the experiments with a personal computer, which is equipped with 12th Gen Intel(R) Core(TM) i7-12700H 2.69 GHz and 32 GB RAM.
 
-The experiments can be reproduced by executing the Jupyter Notebooks under the directory `experiments`. The estimated human-time is the time of running the Jupyter notebooks and thus is negligible. The estimated compute-time for personal machines is also negligible. Below, we list the approximated compute-hour for the current quantum computer, specifically, `ibm_lagos` that is used in this paper. For each experiment, we posted the raw data in the paper under the directory `data` of each experiment directory for reference, and we also provided the calibration data for pulses under the directory `experiments/data`. The experiments include:
+The experiments can be reproduced by executing the Jupyter Notebooks under the directory `experiments`. The estimated human-time is the time of running the Jupyter notebooks and thus is negligible. The estimated compute-time for personal machines is also negligible. Below, we list the approximated compute-hour for the current quantum computer, specifically, `ibm_lagos` that is used in this paper.
+
+For each experiment, we commented out the code to submit jobs to IBM Cloud. Users can redo the experiments by uncommenting the code. In addition, we posted the raw data in the paper under the directory \texttt{data} of each experiment directory for reference, and we also provided the calibration data for pulses under the directory `experiments/{specific_experiment}/data`.
+
+The experiments include:
 
 1. `0-calibration` [1 compute-hour]:
    This directory contains the code to get the calibration data of the $\pi$ pulses to drive qubits into higher energy states.
