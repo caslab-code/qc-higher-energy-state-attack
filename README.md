@@ -1,7 +1,30 @@
 # qc-higher-energy-state-attack
 
-This is the repository for ACM CCS 23 Artifact Appendix: Securing NISQ Quantum Computer Reset Operations Against
-Higher-Energy State Attacks.
+This is the repository for ACM CCS 23 Artifact Appendix: Securing NISQ Quantum Computer Reset Operations Against Higher-Energy State Attacks.
+
+Please find full-length paper paper: [Securing NISQ Quantum Computer Reset Operations Against Higher Energy State Attacks](https://dl.acm.org/doi/10.1145/3576915.3623104).
+
+Bibtex:
+
+```bibtex
+@inproceedings{10.1145/3576915.3623104,
+author = {Xu, Chuanqi and Chen, Jessie and Mi, Allen and Szefer, Jakub},
+title = {Securing NISQ Quantum Computer Reset Operations Against Higher Energy State Attacks},
+year = {2023},
+isbn = {9798400700507},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3576915.3623104},
+doi = {10.1145/3576915.3623104},
+abstract = {Enabling the sharing of quantum computers among different users requires a secure reset operation that can reset the state of a qubit to ground state |0> and prevent leakage of the state to a post-reset circuit. This work highlights that the existing reset operations available in superconducting qubit NISQ quantum computers are not fully secure. In particular, this work demonstrates for the first time a new type of higher-energy state attack. Although NISQ quantum computers are typically abstracted as working with only energy states |0> and |1>, this work shows that it is possible for unprivileged users to set the qubit state to |2 or |3>. By breaking the abstraction of a two-level system, the new higher-energy state attack can be deployed to affect the operation of circuits or for covert communication between circuits. This work shows that common reset protocols are ineffective in resetting a qubit from a higher-energy state. To provide a defense, this work proposes a new Cascading Secure Reset (CSR) operation. CSR, without hardware modifications, is able to efficiently and reliably reset higher-energy states back to |0>. CSR achieves a reduction in |3> -initialized state leakage channel capacity by between 1 and 2 orders of magnitude, and does so with a 25x speedup compared with the default decoherence reset.},
+booktitle = {Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {594–607},
+numpages = {14},
+keywords = {higher-energy state, reset gate, quantum computers},
+location = {<conf-loc>, <city>Copenhagen</city>, <country>Denmark</country>, </conf-loc>},
+series = {CCS '23}
+}
+```
 
 ## Abstract
 
@@ -56,7 +79,7 @@ Besides, the directory `utils` contains helper functions to shorten the code and
 
 The access to IBM Quantum is required. One can register at [IBM Quantum Platform](https://quantum-computing.ibm.com/).
 
-To setup the Qiskit account, visit the IBM Quantum Account web page and copy the account API token at: [IBM Quantum Account](https://quantum-computing.ibm.com/account). Replace `MY_API_TOKEN` below with it and execute the following code snippet:
+To set up the Qiskit account, visit the IBM Quantum Account web page and copy the account API token at: [IBM Quantum Account](https://quantum-computing.ibm.com/account). Replace `MY_API_TOKEN` below with it and execute the following code snippet:
 ```python
    from qiskit import IBMQ
    IBMQ.save_account('MY_API_TOKEN')
@@ -92,7 +115,7 @@ Due to the fast updates of the needed Python modules, the code may not be succes
 |qiskit-ibmq-provider  |    0.20.2|
 |qiskit-terra          |    0.25.2.1|
 
-Additionally, quantum computers on IBM Quantum may retire in the future. On different quantum computers, the results may be different. However, this does not hurt the main claims in the paper. This paper mainly used `ibm_lagos` to perform the experiments, which is announced to be retired on November 28, 2023.
+Additionally, quantum computers on IBM Quantum may retire in the future. On different quantum computers, the results may be different. However, this does not hurt the main claims in the paper. This paper mainly used `ibm_lagos` to perform the experiments, which was announced to be retired on November 28, 2023.
 
 ### Basic Test
 
@@ -109,10 +132,10 @@ We provide all necessary code and experiments to generate the data and figures p
 
 The experiments done in this paper are presented under the directory `experiments`. The authors did the experiments with a personal computer, which is equipped with 12th Gen Intel(R) Core(TM) i7-12700H 2.69 GHz and 32 GB RAM.
 
-The experiments can be reproduced by executing the Jupyter Notebooks under the directory `experiments`. The estimated human-time is the time of running the Jupyter notebooks and thus is negligible. The estimated compute-time for personal machines is also negligible. Below, we list the approximated compute-hour for the current quantum computer, specifically, `ibm_lagos` that used in this paper. For each experiment, we posted the raw data in the paper under the directory `data` of each experiment directory for reference, and we also provide the calibration data for pulses under the directory `experiments/data`. The experiments include:
+The experiments can be reproduced by executing the Jupyter Notebooks under the directory `experiments`. The estimated human-time is the time of running the Jupyter notebooks and thus is negligible. The estimated compute-time for personal machines is also negligible. Below, we list the approximated compute-hour for the current quantum computer, specifically, `ibm_lagos` that is used in this paper. For each experiment, we posted the raw data in the paper under the directory `data` of each experiment directory for reference, and we also provided the calibration data for pulses under the directory `experiments/data`. The experiments include:
 
 1. `0-calibration` [1 compute-hour]:
-   This directory contains the code to obtain the calibration data for $\pi$ pulse.
+   This directory contains the code to get the calibration data of the $\pi$ pulses to drive qubits into higher energy states.
    1. `calibration.ipynb`: Figure 4, which shows the calibration data for $\pi$ pulse.
 
 2. `1-basis_gate_and_decoherence` [1 compute-hour]: This directory contains the code for the basis gate tomography and the decoherence pattern of higher-energy states.
